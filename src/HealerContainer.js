@@ -1,18 +1,15 @@
 import React from 'react'
 import HealerCard from './HealerCard'
 
-class HealerContainer extends React.Component{
+function HealerContainer(props){
 
-
-    render(){
         return(
-        <HealerCard /> 
-    
+            <div className="ui two column centered grid">  {props.healers.map(healer=> <div className="five wide column"><HealerCard healer={healer}/> </div>)}
+            </div>
         )
 
     }
 
 
-}
 
 export default HealerContainer;

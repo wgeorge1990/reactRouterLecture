@@ -1,34 +1,27 @@
 import React from 'react'
 
 
-class HealerCard extends React.Component{
+function HealerCard(props){
 
-    constructor(){
-        super()
-        this.state = {
-
-            name: "Patrica",
-            description: "Reiki Specialist",
-            image: "randomsrc.jpg"
-        }
-    }
-
-    render(){
         return(
-        <div>
-
-            <img class= "hey" src= {this.state.image} />
-            <h1> {this.state.name} </h1>
-            <p> {this.state.description}</p>
-
-        </div>
+            <div className="ui card">
+                <div className="image">
+                <img src={props.healer.image}/>
+                </div>
+                <div className="content">
+                <a className="header">{props.healer.name}</a>
+                
+                <div className="description">
+                    {props.healer.description}
+                </div>
+                </div>
+              
+          </div>
         )
 
 
 
     }
 
-
-}
 
 export default HealerCard;
