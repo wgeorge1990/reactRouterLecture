@@ -3,15 +3,18 @@ import React from 'react';
 class NewHealerForm extends React.Component{
 
     constructor(){
+        super()
         this.state={
             name: "",
-            bio: "",
-            contact:"",
-            description: ""
-
-
+            description: "",
+            image: ""
         }
 
+    }
+
+    handleInput=(e)=>{
+        //conditional to identify
+        this.setState({ [e.target.name]: e.target.value }, ()=> console.log("state", this.state))
     }
 
     render(){
@@ -19,36 +22,33 @@ class NewHealerForm extends React.Component{
 
             <div>
 
-                <form className="ui form">
+                <form className="ui two column grid form">
+                <h3> Add a New Healer! </h3>
                 <div className="field">
-                    <label>First Name</label>
-                    <input type="text" name="first-name" placeholder="First Name"/>
+                    <label>Name</label>
+                    <input onChange = {this.handleInput}  type="text" name="name" placeholder={this.state.name}/>
                 </div>
                 <div className="field">
-                    <label>Last Name</label>
-                    <input type="text" name="last-name" placeholder="Last Name"/>
+                    <label>Description</label>
+                    <input onChange = {this.handleInput} type="text" name="description" placeholder={this.state.description}/>
                 </div>
                 <div className="field">
-                    <div className="ui checkbox">
-                    <input type="checkbox" tabindex="0" className="hidden"/>
-                    <label>I agree to the Terms and Conditions</label>
+                    <div className="field">
+                    <label>Image</label>
+
+                    <input onChange = {this.handleInput} type="text" name="image" placeholder={this.state.image}/>
                     </div>
                 </div>
-                <button className="ui button" type="submit">Submit</button>
+                <button onClick={this.handleSubmit}className="ui small button" type="submit">Submit</button>
                 </form>
             </div>
 
 
         )
 
-
-
-
-
     }
 
 
-
-
-
 }
+
+export default NewHealerForm;

@@ -1,7 +1,8 @@
 import React from 'react'
+import { tsPropertySignature } from '@babel/types';
 
 
-function SearchBar(){
+function SearchBar(props){
 
         return(
             <div className="ui two item menu">
@@ -9,7 +10,7 @@ function SearchBar(){
 
                 <div className="ui large icon input">
                     <i class="search icon"></i>
-                    <input name="search" type="text" placeholder="Search..."/>
+                    <input onChange = {props.handleSearch }name="search" type="text" placeholder="Search..."/>
                 </div>
             </div>
         )
