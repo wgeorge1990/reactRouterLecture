@@ -20,7 +20,7 @@
 - do all components need to have state? 
 
 ## How does React render? 
- - virtual DOM 
+ - [virtual DOM](https://reactjs.org/docs/faq-internals.html)
  - setState()
  - using callbacks to pass data from children components to parents
 
@@ -28,6 +28,7 @@
  - checking that props were passed correctly!
 
  ## Controlled Forms
+ - [Synthetic Events](https://reactjs.org/docs/events.html#keyboard-events)
  - one handler for many events: using `[e.target.name] : e.target.value `
  - using state to save values 
  - onSubmit just grab the form state to add to app state! 
