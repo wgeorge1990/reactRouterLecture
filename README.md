@@ -33,3 +33,12 @@
  - using state to save values 
  - onSubmit just grab the form state to add to app state! 
 
+## Updating State
+- this.setState should be a pure function
+- we should never manipulate state directly!
+
+## Lifecycle Methods
+- different functions that will run during the lifecycle of a component
+- Mounting --> constructor(), render(), componentDidMount()
+- Updating --> componentDidUpdate()
+- Unmounting --> componentWillUnMount()
