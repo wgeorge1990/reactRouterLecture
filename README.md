@@ -37,7 +37,8 @@
 - this.setState should be a pure function
 - we should never manipulate state directly!
 
-## Lifecycle Methods
+## Lifecycle Methods 
+- [Diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 - different functions that will run during the lifecycle of a component
 - Mounting --> constructor(), render(), componentDidMount()
 - Updating --> componentDidUpdate()
