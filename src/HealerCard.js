@@ -1,23 +1,41 @@
 import React from 'react'
 
 
-function HealerCard(props){
+class HealerCard extends React.Component{
 
+    componentDidUpdate(){
+        console.log(" Healer Card component did update ran!")
+    
+      }
+
+      componentDidMount(){
+        console.log("Healer Card component did mount ran!")
+
+      }
+
+      componentWillMount(){
+
+        console.log("Healer Card component will  unmount ran!")
+
+      }
+
+    render(){
         return(
             <div className="ui card">
                 <div className="image">
-                <img src={props.healer.image}/>
+                <img src={this.props.healer.image}/>
                 </div>
                 <div className="content">
-                <a className="header">{props.healer.name}</a>
+                <a className="header">{this.props.healer.name}</a>
                 
                 <div className="description">
-                    {props.healer.description}
+                    {this.props.healer.description}
                 </div>
                 </div>
               
           </div>
         )
+    }
 
 
 

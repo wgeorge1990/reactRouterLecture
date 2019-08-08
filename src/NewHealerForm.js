@@ -9,11 +9,9 @@ class NewHealerForm extends React.Component{
             description: "",
             image: ""
         }
-
     }
 
     handleInput=(e)=>{
-        //conditional to identify
         this.setState({ [e.target.name]: e.target.value }, ()=> console.log("state", this.state))
     }
 
@@ -39,7 +37,7 @@ class NewHealerForm extends React.Component{
                     <input onChange = {this.handleInput} type="text" name="image" placeholder={this.state.image}/>
                     </div>
                 </div>
-                <button onClick={this.handleSubmit}className="ui small button" type="submit">Submit</button>
+                <button onClick={     (e)=> { this.props.addNewHealer(this.state) }    }   className="ui small button" type="submit">Submit</button>
                 </form>
             </div>
 
