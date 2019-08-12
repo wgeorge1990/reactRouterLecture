@@ -32,7 +32,6 @@ class HealerCard extends React.Component{
                     {this.props.healer.description}
                 </div>
                 </div>
-              
           </div>
         )
     }

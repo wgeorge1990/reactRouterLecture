@@ -1,7 +1,8 @@
 import React from 'react';
-import HealerContainer from './HealerContainer';
+import HealerContainer from './HealerContainer'; 
 import SearchBar from './SearchBar';
 import NewHealerForm from './NewHealerForm'
+
 
 class App extends React.Component {
 
@@ -23,13 +24,13 @@ class App extends React.Component {
 
   }
 
-  handleSearch= (e) => {
+  handleSearch = (e) => {
     //get the search term
     //set state to new search term
     this.setState({searchTerm: e.target.value})
   }
 
-    addNewHealer= (newHealerObject) => {
+  addNewHealer = (newHealerObject) => {
     //be able to create a new healers array out of the previous one
 
     let newHealers = [...this.state.healers, newHealerObject]
