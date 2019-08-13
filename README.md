@@ -1,45 +1,45 @@
-## Common React Terms
-- Components
-- State
-- Props
-- JSX
+## Outline
+10m Theoretical Prerequisites
+ 5m But what does React Router Actually Do?
+ 5m Setup and Components
+40m Using the Router Components
 
-## Breakdown of a class component (Object Oriented JS)
-- class and extends keywords
-- what does the constructor() do? super() ? 
-- render()
-- import, export
+## Server-Side/Static Routing VS Client-Side Routing
+- Static routing is what we're used to with Rails. Basically, we define the routes beforehand, and then render their actions separately.
 
-## Building Minimal UI State
-- building component hierarchy
-- what data will each component read/create? 
-- which components need to communicate data ? 
-- hoisting state: how to decide where state should live? 
+- Now that the React stack is handling routing, that means none of our routes require a new GET request to the backend to get that page's HTML. This allows us to enforce the "Single Page App", since we can render the new route's page without refreshing.
 
-## Function vs Stateful Components
-- do all components need to have state? 
+## Benifits of Client-Side-Routing
+- It is fast. 
+- Because everything is loading upon initial page load, redendering a differnt route is very quick. We long longer have to wait on a get request and then it's repsone and view template to render.
+- Gives user a working forward and back button.
+- Allows us to share links and use differnt routes as entry points to differnt parts of a SPA.
 
-## How does React render? 
- - [virtual DOM](https://reactjs.org/docs/faq-internals.html)
- - setState()
- - using callbacks to pass data from children components to parents
+## React Router
+- npm install --save react-router-dom
+- Import BrowserRouter and wrap app component in it in index.js.
+- Import { BrowserRouter as Router, Route, Link, Switch } from     'react-router-dom';
+- <BrowserRouter><App></BrowserRouter>
 
- ## React Debugger
- - checking that props were passed correctly!
+## But what does React Router Actually Do?
+-Ultimately, we're still in a Single-Page application. Show that you can use vanilla JS to change the route in the terminal using the following commands.
 
- ## Controlled Forms
- - [Synthetic Events](https://reactjs.org/docs/events.html#keyboard-events)
- - one handler for many events: using `[e.target.name] : e.target.value `
- - using state to save values 
- - onSubmit just grab the form state to add to app state! 
+- window.history.pushState({}, null, 'page');
+- window.history.forward()
+- window.history.back();
 
-## Updating State
-- this.setState should be a pure function
-- we should never manipulate state directly!
+## Components Used From React-Router-DOM Import
+- Router
+We'll use this in one place in our application (and one place only). Very top level, essentially listening for when the route changes, and making that info accessible.
 
-## Lifecycle Methods 
-- [Diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
-- different functions that will run during the lifecycle of a component
-- Mounting --> constructor(), render(), componentDidMount()
-- Updating --> componentDidUpdate()
-- Unmounting --> componentWillUnMount()
+- Route
+Conditionally render a certain component based on what the route looks like.
+
+- Link
+Changes the url we see in the browser, must have a 'to' prop.
+
+- Switch
+Pick one of the following routes (the first that matches), don't look at the others (like an if/ else if/ else if).
+
+- Redirect
+Forces a redirect to a particular route. We won't use this here.
