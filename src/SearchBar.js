@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 class SearchBar extends React.Component{
 
@@ -8,22 +9,27 @@ class SearchBar extends React.Component{
 
     render(){
         return(
-            <div className="ui three item menu">
+            <div className="ui four item menu">
 
-                <div class="item" >
+                <div className="item" >
                     <h3>
-                        <a>Natural Healing Directory</a>
+                       <Link to='/healers'>Natural Healing Directory</Link>
                     </h3>
                 </div>
 
-                <div class="item" >
+                <div className="item" >
                     <h3>
-                        <a>Add Healer</a>
+                        <Link to='/newHealer'>Add Healer</Link>
+                    </h3>
+                </div>
+                <div className="item" >
+                    <h3>
+                        <Link to='/'>Home</Link>
                     </h3>
                 </div>
 
                 <div className="ui large icon input">
-                    <i class="search icon"></i>
+                    <i className="search icon"></i>
                     <input onChange = {this.props.handleSearch }name="search" type="text" placeholder="Search..."/>
                 </div>
             </div>
