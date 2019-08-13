@@ -60,11 +60,6 @@ class App extends React.Component {
   }
 
   showHealer = (id) => {
-    // fetch('http://localhost:3000/healers')
-    //   .then(res => res.json())
-    //   .then(data => this.setState({
-    //     healers: data
-    //   }))
     console.log('inside of showHealer:', id)
     let h = this.state.healers.filter(healer => (healer.id === Number(id)))
     console.log(h)
@@ -76,8 +71,8 @@ class App extends React.Component {
       <div className="App">
         <SearchBar handleSearch={this.handleSearch} />
         <Switch >
-          <Route exact path='/newHealer' render={(props) => (<NewHealerForm addNewHealer={this.addNewHealer} />)} />
-          <Route exact path='/healers' render={(props) => (<HealerContainer healers={this.filteredHealers()} />)} />
+          <Route exact path='/newHealer' render={() => (<NewHealerForm addNewHealer={this.addNewHealer} />)} />
+          <Route exact path='/healers' render={() => (<HealerContainer healers={this.filteredHealers()} />)} />
           <Route exact path='/healer/:id' render={({ match }) => {
            return <HealerCard healer={this.showHealer(match.params.id)}/>
           }} />
